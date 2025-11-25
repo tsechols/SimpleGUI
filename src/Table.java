@@ -100,18 +100,18 @@ public class Table extends PageComponent {
 //    public void addRowSelectionListener(ListSelectionListener listener) {
 //        table.getSelectionModel().addListSelectionListener(listener);
 //    }
-//
-//    public int getRowCount() {
-//        return model.getRowCount();
-//    }
-//
-//    /**
-//     * Returns the original Rowable objects that were added to the table.
-//     * This is much more useful than getting raw data.
-//     */
-//    public Object[] getTableData() {
-//        return originalObjects.toArray();
-//    }
+
+   public int getRowCount() {
+       return model.getRowCount();
+   }
+
+   /**
+    * Returns the original Rowable objects that were added to the table.
+    * This is much more useful than getting raw data.
+    */
+   public Object[] getTableData() {
+       return originalObjects.toArray();
+   }
 
     @Override
     public Component getAwtComponent() {
