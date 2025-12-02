@@ -1,12 +1,13 @@
 class Product implements Rowable{
     String productName, productCategory, productID;
-    int quantity;
-    double productPrice;
+    // int quantity;
+     String productPrice;
     
-    public Product(String productName, String productCategory, String productID){
+    public Product(String productName, String productCategory, String productID, String productPrice){
         this.productName=productName;
         this.productCategory=productCategory;
         this.productID=productID;
+        this.productPrice=productPrice;
     }
 
     //public int
@@ -14,7 +15,10 @@ class Product implements Rowable{
 
     @Override
     public Object[] getRowData() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        //throw new UnsupportedOperationException("Not supported yet.");
+        Object[] productInfo={productName, productCategory, productID, productPrice};
+        return productInfo;
+
     }
 
 

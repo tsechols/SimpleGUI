@@ -10,11 +10,11 @@ public class Main{
         Page dashBoard=inventory.addPage("Dashboard");
         Page productPage=inventory.addPage("Products");
         Page addProductPage=inventory.addPage("Add Product");
-        Page changeProductPage=inventory.addPage("Change Product");
+       // Page changeProductPage=inventory.addPage("Change Product"); Want to add but not required
 
         ArrayList products=new ArrayList();
 
-        String[] colNames={"Name", "ID", "Category"};
+        String[] colNames={"Name", "ID", "Category", "Price"};
         Table allProductTable=new Table(colNames, products);
 
         addProductHandler addProductHandler=new addProductHandler(allProductTable);
@@ -23,7 +23,7 @@ public class Main{
 
         productPage.addComponent(allProductTable);
         addProductPage.addComponent(addProductForm);
- 
+
         inventory.show();
     }
 }
@@ -34,6 +34,7 @@ class Dashboard{
     Table products;
     Page dashBoardPage;
     Panel aPanel, bPanel, cPanel;
+    
     
     public Dashboard(Table products, Page dashBoardPage){
         this.products=products;
