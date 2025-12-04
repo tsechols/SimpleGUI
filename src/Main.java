@@ -6,23 +6,24 @@ public class Main{
         
         App inventory=new App("Inventory System");
 
-        Page startPage=inventory.addPage("Start");
-        Page dashBoard=inventory.addPage("Dashboard");
+        Page dashBoardPage=inventory.addPage("Dashboard");
         Page productPage=inventory.addPage("Products");
         Page addProductPage=inventory.addPage("Add Product");
        // Page changeProductPage=inventory.addPage("Change Product"); Want to add but not required
 
         ArrayList products=new ArrayList();
 
-        String[] colNames={"Name", "ID", "Category", "Price"};
+        String[] colNames={"Name", "ID", "Category", "Quantity", "Price"};
         Table allProductTable=new Table(colNames, products);
 
         addProductHandler addProductHandler=new addProductHandler(allProductTable);
 
         Form addProductForm=new Form(colNames, "Add Product", addProductHandler);
 
-        productPage.addComponent(allProductTable);
+        productPage.addComponent(allProductTable);  
         addProductPage.addComponent(addProductForm);
+
+
 
         inventory.show();
     }
@@ -61,4 +62,31 @@ class Dashboard{
         }
         
        //    StatCard 
+}
+
+class Model {
+    ArrayList products;
+    Chart categoryChart, quantityChart;
+    StatCard numProducts, valueProducts;
+
+    public Model(){
+
+    }
+
+
+}
+
+class View {
+    App app;
+    Model model;
+
+    public View(App app, Model model){
+        this.app=app;
+        this.model=model;    
+    }
+
+    //update charts/statcards when data added/edited
+    void update() {
+
+    }
 }
